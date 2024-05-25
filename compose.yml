@@ -1,0 +1,27 @@
+---
+services:
+  devcontainer:
+    image: ghcr.io/0xconnorrhodes/devcontainer
+    container_name: devct
+    hostname: devct
+    command: /opt/bootstrap/entrypoint.sh
+    ports:
+      - "127.0.0.1:1313:1313" # hugo
+    volumes:
+      - ssh:/home/connor/.ssh
+      - code:/home/connor/code
+      - persistent:/persistent
+      - zoxide:/home/connor/.local/share/zoxide
+      - fish_share:/home/connor/.local/share/fish
+
+volumes:
+  ssh:
+    name: "devct_ssh"
+  code:
+    name: "code"
+  zoxide:
+    name: "devct_zoxide"
+  fish_share:
+    name: "devct_fish_share"
+  persistent:
+    name: "devct_persistent"
