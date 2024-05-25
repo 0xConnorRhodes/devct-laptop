@@ -3,7 +3,7 @@ services:
   devcontainer:
     image: ghcr.io/0xconnorrhodes/devcontainer
     container_name: devct
-    hostname: devct
+    hostname: devct-lat
     command: /opt/bootstrap/entrypoint.sh
     ports:
       - "127.0.0.1:1313:1313" # hugo
